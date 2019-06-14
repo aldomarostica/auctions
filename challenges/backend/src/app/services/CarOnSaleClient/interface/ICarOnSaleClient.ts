@@ -2,7 +2,11 @@
  * This service describes an interface to access auction data from the CarOnSale API.
  */
 export interface ICarOnSaleClient {
+  setUserMailId(userMailId: string);
 
-    getRunningAuctions(): Promise<any /* TODO: Introduce a type */>
+  setAuthToken(authToken: string);
 
+  getRunningAuctions(): Promise<string>;
+
+  getTotalAuctions(): Promise<number>;
 }
