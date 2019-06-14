@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 import { Util } from "./lib/util";
 import { Container } from "inversify";
 import { ILogger } from "./services/Logger/interface/ILogger";

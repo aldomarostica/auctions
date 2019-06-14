@@ -1,7 +1,7 @@
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 const request = require("request");
 import { Util } from "../../../../lib/util";
-import { assert } from 'chai';
+import { assert } from "chai";
 
 describe("Authentication", () => {
   it("only registered user can log in", async () => {

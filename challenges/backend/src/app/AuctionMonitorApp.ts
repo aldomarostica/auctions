@@ -18,7 +18,9 @@ export class AuctionMonitorApp {
     this.logger.log(`Auction Monitor started.`);
 
     this.auth.setCredentials(userMailId, password);
-    const authResponse = await this.auth.authenticate().catch(err => process.exit(-1));
+    const authResponse = await this.auth
+      .authenticate()
+      .catch(err => process.exit(-1));
 
     if (!authResponse.hasOwnProperty("token")) {
       process.exit(-1);
@@ -27,7 +29,9 @@ export class AuctionMonitorApp {
     this.carOnSaleClient.setUserMailId(userMailId);
     this.carOnSaleClient.setAuthToken(authResponse.token);
 
-    const auctionsJson = await this.carOnSaleClient.getRunningAuctions().catch(err => process.exit(-1));
+    const auctionsJson = await this.carOnSaleClient
+      .getRunningAuctions()
+      .catch(err => process.exit(-1));
 
     const auctions = JSON.parse(auctionsJson);
 
